@@ -1,10 +1,10 @@
 package com.chad.baserecyclerviewadapterhelper.adapter.node.tree.provider;
 
+import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
-import androidx.core.view.ViewCompat;
 
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.baserecyclerviewadapterhelper.adapter.node.tree.NodeTreeAdapter;

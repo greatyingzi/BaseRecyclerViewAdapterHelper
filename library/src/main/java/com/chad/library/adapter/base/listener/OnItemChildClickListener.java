@@ -2,7 +2,7 @@ package com.chad.library.adapter.base.listener;
 
 import android.view.View;
 
-import androidx.annotation.NonNull;
+import android.support.annotation.NonNull;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 

@@ -1,7 +1,7 @@
 package com.chad.library.adapter.base
 
-import androidx.annotation.IntRange
-import androidx.recyclerview.widget.DiffUtil
+import android.support.annotation.IntRange
+import android.support.v7.util.DiffUtil
 import com.chad.library.adapter.base.entity.node.BaseExpandNode
 import com.chad.library.adapter.base.entity.node.BaseNode
 import com.chad.library.adapter.base.entity.node.NodeFooterImp
@@ -129,14 +129,6 @@ abstract class BaseNodeAdapter(nodeList: MutableList<BaseNode>? = null)
 
 //        notifyItemRangeChanged(index + getHeaderLayoutCount(), max(removeCount, newFlatData.size)
         }
-    }
-
-    override fun setDiffNewData(list: MutableList<BaseNode>?) {
-        if (hasEmptyView()) {
-            setNewInstance(list)
-            return
-        }
-        super.setDiffNewData(flatData(list ?: arrayListOf()))
     }
 
     override fun setDiffNewData(diffResult: DiffUtil.DiffResult, list: MutableList<BaseNode>) {

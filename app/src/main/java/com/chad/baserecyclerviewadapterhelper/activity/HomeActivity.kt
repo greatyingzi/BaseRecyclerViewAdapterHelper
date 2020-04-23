@@ -3,7 +3,7 @@ package com.chad.baserecyclerviewadapterhelper.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity
 import com.chad.baserecyclerviewadapterhelper.R
 import com.chad.baserecyclerviewadapterhelper.activity.multi.ChooseMultipleItemUseTypeActivity
 import com.chad.baserecyclerviewadapterhelper.activity.node.ChooseNodeUseTypeActivity
@@ -53,7 +53,6 @@ class HomeActivity : AppCompatActivity(), OnItemClickListener {
                 HomeEntity("EmptyView", EmptyViewUseActivity::class.java, R.mipmap.gv_empty),
                 HomeEntity("ItemClick", ItemClickActivity::class.java, R.mipmap.gv_item_click),
                 HomeEntity("DataBinding", DataBindingUseActivity::class.java, R.mipmap.gv_databinding),
-                HomeEntity("DiffUtil", DiffUtilActivity::class.java, R.mipmap.gv_databinding),
 
                 HomeEntity(headerTitle = "Adapter 类型"),
                 HomeEntity("MultipleItem", ChooseMultipleItemUseTypeActivity::class.java, R.mipmap.gv_multipleltem),

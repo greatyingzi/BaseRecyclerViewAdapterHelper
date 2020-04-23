@@ -1,20 +1,33 @@
 buildscript {
     ext.kotlin_version = '1.3.71'
     repositories {
+        maven { url "http://nexus.qknode.com/repository/android" }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url "http://dl.bintray.com/tencentqcloudterminal/maven" }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
         google()
-        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.2'
+        classpath 'com.android.tools.build:gradle:3.6.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        maven { url "http://nexus.qknode.com/repository/android" }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url "http://dl.bintray.com/tencentqcloudterminal/maven" }
+        maven { url "https://jitpack.io" }
         mavenCentral()
+        google()
     }
 }
 

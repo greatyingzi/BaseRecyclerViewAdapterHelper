@@ -4,15 +4,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.baserecyclerviewadapterhelper.adapter.LoadMoreAdapter;
@@ -49,7 +49,7 @@ public class LoadMoreRefreshUseActivity extends BaseActivity {
 
     private static final int PAGE_SIZE = 5;
 
-    private SwitchCompat       switchCompat;
+    private SwitchCompat switchCompat;
     private RecyclerView       mRecyclerView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private LoadMoreAdapter    mAdapter;

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/bg">
 
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
     <FrameLayout
@@ -24,7 +23,7 @@
         android:background="@drawable/shape_right_top_float_bg"
         android:padding="8dp">
 
-        <androidx.appcompat.widget.SwitchCompat
+        <android.support.v7.widget.SwitchCompat
             android:id="@+id/autoLoadMoreSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

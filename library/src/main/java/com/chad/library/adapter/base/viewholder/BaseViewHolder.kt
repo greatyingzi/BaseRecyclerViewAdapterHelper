@@ -1,15 +1,15 @@
 package com.chad.library.adapter.base.viewholder
 
+import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.support.annotation.*
+import android.support.v7.widget.RecyclerView
 import android.util.SparseArray
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.*
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.RecyclerView
 
 /**
  * ViewHolder 基类
@@ -28,7 +28,7 @@ open class BaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
      *
      * @return B?
      */
-    @Deprecated("Please use BaseDataBindingHolder class", ReplaceWith("DataBindingUtil.getBinding(itemView)", "androidx.databinding.DataBindingUtil"))
+    @Deprecated("Please use BaseDataBindingHolder class", ReplaceWith("DataBindingUtil.getBinding(itemView)", "android.databinding.DataBindingUtil"))
     open fun <B : ViewDataBinding> getBinding(): B? = DataBindingUtil.getBinding(itemView)
 
 

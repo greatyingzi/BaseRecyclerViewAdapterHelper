@@ -2,6 +2,14 @@ package com.chad.library.adapter.base
 
 import android.animation.Animator
 import android.content.Context
+import android.support.annotation.IdRes
+import android.support.annotation.IntRange
+import android.support.annotation.LayoutRes
+import android.support.annotation.NonNull
+import android.support.v7.util.DiffUtil
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +18,7 @@ import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.view.ViewParent
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import androidx.annotation.IdRes
-import androidx.annotation.IntRange
-import androidx.annotation.LayoutRes
-import androidx.annotation.NonNull
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chad.library.adapter.base.animation.*
-import com.chad.library.adapter.base.diff.BrvahAsyncDiffer
-import com.chad.library.adapter.base.diff.BrvahAsyncDifferConfig
 import com.chad.library.adapter.base.diff.BrvahListUpdateCallback
 import com.chad.library.adapter.base.listener.*
 import com.chad.library.adapter.base.module.*
@@ -157,7 +155,6 @@ abstract class BaseQuickAdapter<T, VH : BaseViewHolder>
         }
 
     /********************************* Private property *****************************************/
-    private var mDiffHelper: BrvahAsyncDiffer<T>? = null
 
     private lateinit var mHeaderLayout: LinearLayout
     private lateinit var mFooterLayout: LinearLayout
@@ -1278,50 +1275,6 @@ abstract class BaseQuickAdapter<T, VH : BaseViewHolder>
         if (this.data.size == size) {
             notifyDataSetChanged()
         }
-    }
-
-    /**
-     * 设置Diff Callback，用于快速生成 Diff Config。
-     *
-     * @param diffCallback ItemCallback<T>
-     */
-    fun setDiffCallback(diffCallback: DiffUtil.ItemCallback<T>) {
-        this.setDiffConfig(BrvahAsyncDifferConfig.Builder(diffCallback).build())
-    }
-
-    /**
-     * 设置Diff Config。如需自定义线程，请使用此方法。
-     * 在使用 [setDiffNewData] 前，必须设置此方法
-     * @param config BrvahAsyncDifferConfig<T>
-     */
-    fun setDiffConfig(config: BrvahAsyncDifferConfig<T>) {
-        mDiffHelper = BrvahAsyncDiffer(this, config)
-    }
-
-    fun getDiffHelper(): BrvahAsyncDiffer<T> {
-        checkNotNull(mDiffHelper) {
-            "Please use setDiffCallback() or setDiffConfig() first!"
-        }
-        return mDiffHelper!!
-    }
-
-    /**
-     * 使用 Diff 设置新实例.
-     * 此方法为异步Diff，无需考虑性能问题.
-     * 使用之前请先设置 [setDiffCallback] 或者 [setDiffConfig].
-     *
-     * Use Diff setting up a new instance to data.
-     * This method is asynchronous.
-     *
-     * @param newData MutableList<T>?
-     */
-    open fun setDiffNewData(list: MutableList<T>?) {
-        if (hasEmptyView()) {
-            // If the current view is an empty view, set the new data directly without diff
-            setNewInstance(list)
-            return
-        }
-        mDiffHelper?.submitList(list)
     }
 
     /**

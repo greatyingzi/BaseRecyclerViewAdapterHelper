@@ -28,7 +28,7 @@ public class ChooseMultipleItemUseTypeActivity extends BaseActivity {
         binding.cardView0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseMultipleItemUseTypeActivity.this, BinderUseActivity.class));
+//                startActivity(new Intent(ChooseMultipleItemUseTypeActivity.this, BinderUseActivity.class));
             }
         });
 

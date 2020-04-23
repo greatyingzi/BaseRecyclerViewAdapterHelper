@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:foreground="?android:attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
     card_view:cardBackgroundColor="@color/item_bg"
     card_view:cardCornerRadius="4dp"
     card_view:cardUseCompatPadding="true">
@@ -26,7 +26,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
-            android:src="@mipmap/animation_img1" />
+            card_view:srcCompat="@mipmap/animation_img1" />
 
         <TextView
             android:id="@+id/tweetName"
@@ -69,4 +69,4 @@
             android:text="04/06/13" />
 
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</android.support.v7.widget.CardView>

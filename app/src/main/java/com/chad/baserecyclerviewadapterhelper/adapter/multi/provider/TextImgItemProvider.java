@@ -2,7 +2,7 @@ package com.chad.baserecyclerviewadapterhelper.adapter.multi.provider;
 
 import android.view.View;
 
-import androidx.annotation.NonNull;
+import android.support.annotation.NonNull;
 
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.baserecyclerviewadapterhelper.entity.ProviderMultiEntity;

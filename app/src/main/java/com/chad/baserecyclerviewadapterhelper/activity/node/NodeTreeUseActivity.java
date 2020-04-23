@@ -3,8 +3,8 @@ package com.chad.baserecyclerviewadapterhelper.activity.node;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.baserecyclerviewadapterhelper.adapter.node.tree.NodeTreeAdapter;
